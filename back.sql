@@ -27,8 +27,8 @@ CREATE TABLE `tb_cliente` (
   `id_cliente` int NOT NULL AUTO_INCREMENT,
   `cpf_cliente` varchar(14) NOT NULL,
   `nome_cliente` varchar(150) NOT NULL,
-  `email_cliente` varchar(45) DEFAULT NULL,
   `telefone_cliente` varchar(45) DEFAULT NULL,
+  `email_cliente` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_cliente`)
 ) ENGINE=MyISAM AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
