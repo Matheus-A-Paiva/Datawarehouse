@@ -30,7 +30,7 @@ CREATE TABLE `tb_cliente` (
   `email_cliente` varchar(45) DEFAULT NULL,
   `telefone_cliente` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -59,7 +59,7 @@ CREATE TABLE `tb_mesa` (
   PRIMARY KEY (`codigo_mesa`),
   KEY `fk_cliente_idx` (`id_cliente`),
   CONSTRAINT `fk_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tb_cliente` (`id_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=16384 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16384 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +90,7 @@ CREATE TABLE `tb_pedido` (
   CONSTRAINT `fk_mesa` FOREIGN KEY (`codigo_mesa`) REFERENCES `tb_mesa` (`codigo_mesa`),
   CONSTRAINT `fk_prato` FOREIGN KEY (`codigo_prato`) REFERENCES `tb_prato` (`codigo_prato`),
   CONSTRAINT `fk_situacao_pedido` FOREIGN KEY (`codigo_situacao_pedido`) REFERENCES `tb_situacao_pedido` (`codigo_situacao_pedido`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,7 +118,7 @@ CREATE TABLE `tb_prato` (
   PRIMARY KEY (`codigo_prato`),
   KEY `fk_tipo_prato_idx` (`codigo_tipo_prato`),
   CONSTRAINT `fk_tipo_prato` FOREIGN KEY (`codigo_tipo_prato`) REFERENCES `tb_tipo_prato` (`codigo_tipo_prato`)
-) ENGINE=InnoDB AUTO_INCREMENT=1024 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1024 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `tb_situacao_pedido` (
   `codigo_situacao_pedido` int NOT NULL AUTO_INCREMENT,
   `nome_situacao_pedido` varchar(45) NOT NULL,
   PRIMARY KEY (`codigo_situacao_pedido`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,7 +166,7 @@ CREATE TABLE `tb_tipo_prato` (
   `codigo_tipo_prato` int NOT NULL AUTO_INCREMENT,
   `nome_tipo_prato` varchar(45) NOT NULL,
   PRIMARY KEY (`codigo_tipo_prato`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

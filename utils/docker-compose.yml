@@ -5,6 +5,8 @@ services:
     image: mysql:8.0
     container_name: db-ingestion-1
     restart: always
+    volumes:
+      - volume_datawarehouse:/var/lib/mysql
     environment:
       MYSQL_DATABASE: 'db_ingestion_1'
       MYSQL_USER: 'user'
@@ -14,3 +16,5 @@ services:
       - '3306:3306'
     expose:
       - '3306'
+volumes:
+  volume_datawarehouse:
